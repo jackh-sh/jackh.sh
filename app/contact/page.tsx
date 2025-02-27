@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { EMAIL_ADDRESS, GITHUB_URL, LINKED_IN_URL } from "@/lib/constants";
 import { toast } from "sonner";
 import Link from "next/link";
+import UnderlineLink from "@/components/UnderlineLink";
 
 export default function Contact() {
     function onClick() {
@@ -43,15 +44,19 @@ export default function Contact() {
                                 className="text-black p-0 h-auto hover:no-underline hover:opacity-70"
                                 asChild
                             >
-                                <Link href={LINKED_IN_URL}>LINKEDIN</Link>
+                                <UnderlineLink href={LINKED_IN_URL}>
+                                    LINKEDIN
+                                </UnderlineLink>
                             </Button>
                             <span>/</span>
                             <Button
                                 variant="link"
-                                className="text-black p-0 h-auto hover:no-underline hover:opacity-70"
+                                className="text-black p-0 h-auto hover:no-underline hover:opacity-80"
                                 asChild
                             >
-                                <Link href={GITHUB_URL}>GITHUB</Link>
+                                <UnderlineLink href={GITHUB_URL}>
+                                    GITHUB
+                                </UnderlineLink>
                             </Button>
                         </div>
                     </div>
