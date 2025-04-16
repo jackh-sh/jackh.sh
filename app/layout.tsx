@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { Providers } from "./providers";
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
@@ -23,10 +24,11 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={`${montserrat.variable} antialiased`}>
-                <div className="min-h-screen">
+                <div className="min-h-screen max-w-screen overflow-x-hidden">
                     <Providers>
                         <Navbar />
                         {children}
+                        <Footer />
                         <Toaster />
                     </Providers>
                 </div>

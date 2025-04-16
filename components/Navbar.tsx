@@ -14,7 +14,7 @@ const NavItems: NavbarItem[] = [
     },
     {
         name: "Blog",
-        href: "/blog",
+        href: "https://medium.com/@jackphumphries02",
     },
     {
         name: "Contact",
@@ -33,7 +33,7 @@ export default function Navbar() {
                     >
                         <span className="font-medium">JH</span>
                     </Link>
-                    <nav className="space-x-8">
+                    <nav className="space-x-4 md:space-x-8">
                         {NavItems.map((item) => (
                             <UnderlineLink href={item.href} key={item.href}>
                                 {item.name.toUpperCase()}

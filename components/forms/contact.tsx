@@ -4,7 +4,6 @@ import { sendMessage } from "@/app/contact/actions";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { toast } from "sonner";
 import { useActionState } from "react";
 
 const initialState = {
