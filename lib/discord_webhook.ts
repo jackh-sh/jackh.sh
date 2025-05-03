@@ -76,9 +76,13 @@ export default async function sendWebhook(message: WebhookMessage) {
     const res = await fetch(process.env.DISCORD_WEBHOOK_URL!, {
         method: "POST",
         body: JSON.stringify(message),
+        headers: {
+            "Content-Type": "application/json",
+        },
     });
 
     if (!res.ok || (res.status !== 204 && res.status !== 200)) {
+        console.log(await res.json());
         throw Error("Webhook failed");
     }
 

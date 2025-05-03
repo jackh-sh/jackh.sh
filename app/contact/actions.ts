@@ -1,5 +1,9 @@
 "use server";
 
+export type SendMessageResult =
+    | { success: true }
+    | { success: false; errors: Record<string, string[]> };
+
 import sendWebhook from "@/lib/discord_webhook";
 import { z } from "zod";
 
@@ -13,27 +17,46 @@ const schema = z.object({
     message: z.string().min(10),
 });
 
-export async function sendMessage(prevState: any, formData: FormData) {
-    const validatedFields = schema.safeParse({
-        email: formData.get("email"),
-        name: formData.get("name"),
-        message: formData.get("message"),
-    });
+export async function sendMessage(
+    formData: FormData,
+): Promise<
+    { success: true } | { success: false; errors: Record<string, string[]> }
+> {
+    try {
+        const validatedFields = schema.safeParse({
+            email: formData.get("email"),
+            name: formData.get("name"),
+            message: formData.get("message"),
+        });
 
-    if (!validatedFields.success) {
+        if (!validatedFields.success) {
+            return {
+                success: false,
+                errors: validatedFields.error.flatten().fieldErrors,
+            };
+        }
+
+        const { name, email, message } = validatedFields.data;
+
+        await sendWebhook({
+            embeds: [
+                {
+                    title: "New Website Message",
+                    description: `From ${name} (${email})\n\n>${message}`,
+                },
+            ],
+        });
+    } catch (e) {
+        console.log(e);
         return {
-            errors: validatedFields.error.flatten().fieldErrors,
+            success: false,
+            errors: {
+                generic: [
+                    "Something went wrong, please try again or send me an email instead.",
+                ],
+            },
         };
     }
 
-    const { name, email, message } = validatedFields.data;
-
-    await sendWebhook({
-        embeds: [
-            {
-                title: "New Website Message",
-                description: `From ${name} (${email})\n${message}`,
-            },
-        ],
-    });
+    return { success: true };
 }

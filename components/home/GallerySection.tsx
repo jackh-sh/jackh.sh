@@ -9,26 +9,26 @@ const data = [
     {
         id: "scoreline",
         title: "WFA ScoreLine",
-        href: "/projects/scoreline",
         image: "/img/gallery/scoreline.png",
         logo: "/img/gallery/scoreline-icon.png",
         company: "WFA ScoreLine",
+        href: "https://scoreline.thewfa.org.uk",
     },
     {
-        id: "item-2",
+        id: "socially",
         title: "Socially",
-        href: "/projects/socially",
         image: "/img/gallery/socially.png",
         logo: "/img/gallery/socially-icon.png",
         company: "Socially",
+        href: "https://socially.jackh.sh/",
     },
     {
-        id: "item-3",
-        title: "Case study 2",
-        href: "#",
-        image: "https://shadcnblocks.com/images/block/placeholder-dark-2.svg",
-        logo: "https://shadcnblocks.com/images/block/logos/astro-wordmark.svg",
-        company: "Company Name",
+        id: "huddle-up",
+        title: "Huddle Up",
+        image: "/img/gallery/huddle-up.png",
+        logo: "/img/gallery/huddle-up-logo.png",
+        company: "Huddle Up",
+        href: "https://huddleup.gg",
     },
 ];
 
@@ -48,7 +48,7 @@ export default function GallerySection() {
                         Here’s a collection of software projects I’ve worked on,
                         showcasing my skills in software development,
                         problem-solving, and innovation. From sports and media
-                        technology to , these projects highlight my ability to
+                        technology to, these projects highlight my ability to
                         build impactful and efficient software.
                     </p>
                 </div>
@@ -67,6 +67,7 @@ export default function GallerySection() {
                             <a
                                 href={item.href}
                                 className="relative block h-full w-full overflow-hidden rounded-xs bg-primary text-primary-foreground"
+                                target="_blank"
                             >
                                 <div className='absolute -inset-[50%] hidden h-[200%] w-[200%] md:block lg:group-data-[state="closed"]:blur-sm'>
                                     <div className="absolute top-[calc(25%+40px)] aspect-square h-[calc(50%+40px)] max-lg:right-[calc(50%+40px)] lg:right-[50%]">
@@ -82,7 +83,7 @@ export default function GallerySection() {
                                         <img
                                             src={item.logo}
                                             alt={item.company}
-                                            className="h-8 rounded-lg"
+                                            className="h-8 rounded-sm"
                                         />
                                     </div>
 

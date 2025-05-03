@@ -32,14 +32,14 @@ export default function AboutSection() {
                         </p>
                     </div>
                     <div>
-                        <div className="relative mx-auto max-w-[596px] overflow-hidden rounded-xs bg-primary pl-6 pt-6 lg:mx-0">
+                        <div className="relative mx-auto max-w-[596px] overflow-hidden rounded-xs bg-black pl-6 pt-6 lg:mx-0">
                             <AspectRatio
                                 ratio={0.9104 / 1}
                                 className="overflow-hidden rounded-xs"
                             >
                                 <img
                                     alt=""
-                                    src="https://shadcnblocks.com/images/block/placeholder-dark-1.svg"
+                                    src="/img/jack-3.png"
                                     className="block size-full object-cover"
                                 />
                             </AspectRatio>
