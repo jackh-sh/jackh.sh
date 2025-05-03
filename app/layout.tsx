@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "Home - Jack Humphries",
     description:
         "Software Engineer Passionate About Building Innovative Solutions",
+    metadataBase: new URL("https://jackh.sh"),
     icons: {
         icon: [
             {
