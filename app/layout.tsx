@@ -13,7 +13,40 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     title: "Home - Jack Humphries",
-    description: "Description Here",
+    description:
+        "Software Engineer Passionate About Building Innovative Solutions",
+    icons: {
+        icon: [
+            {
+                url: "/favicons/favicon-96x96.png",
+                type: "image/png",
+                sizes: "96x96",
+            },
+            { url: "/favicons/favicon.svg", type: "image/svg+xml" },
+            { url: "/favicons/favicon.ico", rel: "shortcut icon" },
+        ],
+        apple: [{ url: "/favicons/apple-touch-icon.png", sizes: "180x180" }],
+    },
+    manifest: "/favicons/site.webmanifest",
+    appleWebApp: {
+        title: "jackh.sh",
+    },
+    openGraph: {
+        title: "Jack Humphries",
+        description:
+            "Software Engineer Passionate About Building Innovative Solutions",
+        url: "https://jackh.sh",
+        siteName: "Jack Humphries",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "jackh.sh Open Graph Image",
+            },
+        ],
+        type: "website",
+    },
 };
 
 export default function RootLayout({

@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import { EMAIL_ADDRESS, GITHUB_URL, LINKED_IN_URL } from "@/lib/constants";
 import UnderlineLink from "@/components/UnderlineLink";
 import ContactForm from "@/components/forms/contact";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Contact - Jack Humphries",
+};
 export default function Contact() {
     return (
         <main className="flex items-center justify-center min-h-screen w-screen py-20">
